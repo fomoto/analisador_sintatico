@@ -73,6 +73,9 @@ class Tab
   end
 end
 
+#EXEMPLO
+#########################
+
 e = Simbolo.new('E')
 t = Simbolo.new('T')
 s = Simbolo.new('S')
@@ -104,15 +107,14 @@ f.cadeia.merge!('id' => ['id'])
 f.cadeia.merge!('num' => ['num'])
 f.cadeia.merge!('(' => ['(','E',')'])
 
-#EXEMPLO
-#########################
+
 analisador = Analisador.new
 analisador.simbolos = [e,t,s,g,f]
 analisador.pilha = ['E']
 
 resp = 0
 sequence = ['id','*','num','+','id','$']
-sequence = ['id', '+', 'num', 'id','$']
+# sequence = ['id', '+', 'num', 'id','$']
 # sequence = ['id','*','$']
 while resp != 1
  resp = analisador.analisar(sequence.first,sequence) unless sequence.empty?
